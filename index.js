@@ -3,6 +3,7 @@ const express = require("express")
 const app=express()
 const mysql=require("mysql")
 const moment=require("moment")
+const cors=require("mysql")
 
 const PORT = process.env.PORT || 5000
 
@@ -14,6 +15,7 @@ const logger = (req, res, next) =>{
 }
 
 app.use(logger);
+app.use(cors());
 
 const connection = mysql.createConnection({
     host: "bm3tgiwertvvg8jjqteu-mysql.services.clever-cloud.com",
